@@ -7,7 +7,7 @@ find_package(catkin REQUIRED COMPONENTS designator_integration_cpp designator_in
 
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES beliefstate_client
+  LIBRARIES semrec_client
   CATKIN_DEPENDS designator_integration_cpp designator_integration_msgs roscpp roslib)
 
 ###########
@@ -19,9 +19,9 @@ include_directories(
   ${catkin_INCLUDE_DIRS})
 
 add_library(${PROJECT_NAME}
-  src/beliefstate_client/BeliefstateClient.cpp
-  src/beliefstate_client/Object.cpp
-  src/beliefstate_client/Context.cpp)
+  src/semrec_client/BeliefstateClient.cpp
+  src/semrec_client/Object.cpp
+  src/semrec_client/Context.cpp)
 
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}
