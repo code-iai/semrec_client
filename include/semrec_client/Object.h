@@ -48,7 +48,7 @@
 #include <designators/Designator.h>
 
 
-namespace beliefstate_client {
+namespace semrec_client {
   class Object : public designator_integration::Designator {
   private:
     std::string m_strNamespace;

@@ -53,10 +53,10 @@
 #include <designator_integration_msgs/DesignatorCommunication.h>
 
 // Private
-#include <beliefstate_client/Object.h>
+#include <semrec_client/Object.h>
 
 
-namespace beliefstate_client {
+namespace semrec_client {
   /*! \brief Client adapter for interfacing with the beliefstate ROS package */
   class BeliefstateClient {
   private:

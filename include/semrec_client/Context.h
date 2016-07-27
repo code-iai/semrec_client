@@ -48,10 +48,10 @@
 #include <designators/Designator.h>
 
 // Private
-#include <beliefstate_client/BeliefstateClient.h>
+#include <semrec_client/BeliefstateClient.h>
 
 
-namespace beliefstate_client {
+namespace semrec_client {
   class Context : public designator_integration::Designator {
   private:
     int m_nContextID;

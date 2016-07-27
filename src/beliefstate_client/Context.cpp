@@ -1,7 +1,7 @@
-#include <beliefstate_client/Context.h>
+#include <semrec_client/Context.h>
 
 
-namespace beliefstate_client {
+namespace semrec_client {
   Context::Context(BeliefstateClient* bsclClient, int nContextID) {
     m_bsclClient = bsclClient;
     

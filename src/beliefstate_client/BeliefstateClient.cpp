@@ -37,10 +37,10 @@
 /** \author Jan Winkler */
 
 
-#include <beliefstate_client/BeliefstateClient.h>
+#include <semrec_client/BeliefstateClient.h>
 
 
-namespace beliefstate_client {
+namespace semrec_client {
   BeliefstateClient::BeliefstateClient(std::string strSource) {
     this->init(0, NULL, strSource);
   }

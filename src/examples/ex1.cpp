@@ -1,11 +1,11 @@
 #include <ros/ros.h>
 #include <iostream>
 #include <cstdlib>
-#include <beliefstate_client/BeliefstateClient.h>
-#include <beliefstate_client/Context.h>
+#include <semrec_client/BeliefstateClient.h>
+#include <semrec_client/Context.h>
 
 
-using namespace beliefstate_client;
+using namespace semrec_client;
 
 
 int main(int argc, char** argv) {
