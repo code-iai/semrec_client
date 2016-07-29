@@ -213,6 +213,57 @@ namespace semrec_client {
     
     delete cdSend;
   }
+
+
+  void BeliefstateClient::addDesignator(designator_integration::Designator* cdAdd, std::string strProperty , std::string strClassNamespace, std::string strClass,   int nToID){
+
+    std::string strDesigType = "";
+
+    switch(cdAdd->type()) {
+    case designator_integration::Designator::DesignatorType::OBJECT: {
+      strDesigType = "OBJECT";
+    } break;
+
+    case designator_integration::Designator::DesignatorType::LOCATION: {
+      strDesigType = "LOCATION";
+    } break;
+
+    default:
+    case designator_integration::Designator::DesignatorType::ACTION: {
+      strDesigType = "ACTION";
+    } break;
+    }
+
+    std::stringstream sts;
+    long lAddress = (long)cdAdd;
+    sts << lAddress;
+
+    designator_integration::Designator* cdSend = new designator_integration::Designator(designator_integration::Designator::DesignatorType::ACTION);
+    cdSend->addChild("description", designator_integration::KeyValuePair::ValueType::LIST, cdAdd->children());
+    cdSend->setValue("command", "add-object");
+    cdSend->setValue("type", strDesigType);
+//    cdSend->setValue("annotation", strAnnotation);
+    cdSend->setValue("memory-address", sts.str());
+
+    if(strProperty!= "") {
+      cdSend->setValue("property", strProperty);
+    }
+    if(strClass!= "") {
+      cdSend->setValue("class", strClass);
+    }
+
+    if(strClassNamespace!= "") {
+      cdSend->setValue("classnamespace", strClassNamespace);
+    }
+
+
+    std::list<designator_integration::Designator*> lstResultDesignators = this->alterContext(cdSend, nToID);
+
+    for(designator_integration::Designator* cdDelete : lstResultDesignators) {
+      delete cdDelete;
+    }
+    delete cdSend;
+  }
   
   void BeliefstateClient::annotateParameter(std::string strKey, std::string strValue, int nToID) {
     designator_integration::Designator* cdAnnotate = new designator_integration::Designator(designator_integration::Designator::DesignatorType::OBJECT);

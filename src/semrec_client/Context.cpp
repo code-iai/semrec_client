@@ -54,6 +54,11 @@ namespace semrec_client {
   void Context::addDesignator(designator_integration::Designator* cdAdd, std::string strAnnotation) {
     m_bsclClient->addDesignator(cdAdd, strAnnotation, this->id());
   }
+
+  void Context::addDesignator(designator_integration::Designator* cdAdd, std::string strProperty, std::string strClassNamespace, std::string strClass) {
+    m_bsclClient->addDesignator(cdAdd, strProperty, strClassNamespace, strClass, this->id());
+  }
+
   
   void Context::discreteEvent(std::string strEventName, std::string strClassNamespace, std::string strClass, bool bSuccess, double dTimeStamp) {
     m_bsclClient->discreteEvent(strEventName, this->id(), strClassNamespace, strClass, bSuccess, dTimeStamp, true);

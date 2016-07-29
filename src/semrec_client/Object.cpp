@@ -6,6 +6,11 @@ namespace semrec_client {
     m_strNamespace = strNamespace;
     m_strClass = strClass;
   }
+
+  Object::Object(designator_integration::Designator *desig, std::string strNamespace, std::string strClass) : designator_integration::Designator(desig){
+    m_strNamespace = strNamespace;
+    m_strClass = strClass;
+  }
   
   Object::~Object() {
   }

@@ -110,6 +110,8 @@ namespace semrec_client {
     void addObject(Object* objAdd, std::string strProperty = "", int nToID = -1);
     
     void addDesignator(designator_integration::Designator* cdAdd, std::string strAnnotation = "", int nToID = -1);
+    void addDesignator(designator_integration::Designator* cdAdd, std::string strProperty = "", std::string strClassNamespace="",std::string strClass="",   int nToID = -1);
+
     void annotateParameter(std::string strKey, std::string strValue, int nToID = -1);
     void annotateParameter(std::string strKey, float fValue, int nToID = -1);
     

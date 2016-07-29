@@ -57,6 +57,7 @@ namespace semrec_client {
   protected:
   public:
     Object(std::string strNamespace, std::string strClass);
+    Object(designator_integration::Designator* , std::string strNamesapce="",std::string strClass="");
     ~Object();
     
     std::string className();
