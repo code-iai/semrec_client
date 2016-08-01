@@ -24,8 +24,7 @@ add_library(${PROJECT_NAME}
   src/semrec_client/Context.cpp)
 
 target_link_libraries(${PROJECT_NAME}
-  ${catkin_LIBRARIES}
-  designator_integration)
+  ${catkin_LIBRARIES})
 
 add_executable(ex1
   src/examples/ex1.cpp)
