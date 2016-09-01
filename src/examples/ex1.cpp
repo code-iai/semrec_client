@@ -20,6 +20,8 @@ int main(int argc, char** argv) {
   Context* ctxMain = new Context(bscl, "MainTimeline", "&sim;", "MainTimeline", 0);
   ctxMain->annotateParameter("Room", "Kitchen");
   
+  ctxMain->annotateResource("someProperty", "http://uri.com/", "theNamespace");
+  
   Object* objCup = new Object("&sim;", "Cup");
   Object* objTable = new Object("&sim;", "Table");
   Object* objHand = new Object("&sim;", "Hand");

@@ -73,6 +73,7 @@ namespace semrec_client {
     Context* startContext(std::string strContextName, std::string strClassNamespace = "", std::string strClass = "", double dTimeStamp = -1);
     void annotateParameter(std::string strKey, std::string strValue);
     void annotateParameter(std::string strKey, float fValue);
+    void annotateResource(std::string strProperty, std::string strURI, std::string strNamespace = "");
     void addObject(Object* objAdd, std::string strProperty = "");
     void addDesignator(designator_integration::Designator* cdAdd, std::string strAnnotation = "");
     void addDesignator(designator_integration::Designator* cdAdd, std::string strProperty="", std::string strClassNamespace="", std::string strClass="");

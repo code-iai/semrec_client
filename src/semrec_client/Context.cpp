@@ -47,6 +47,10 @@ namespace semrec_client {
     m_bsclClient->annotateParameter(strKey, fValue, this->id());
   }
   
+  void Context::annotateResource(std::string strProperty, std::string strURI, std::string strNamespace) {
+    m_bsclClient->annotateResource(strProperty, strURI, strNamespace, this->id());
+  }
+  
   void Context::addObject(Object* objAdd, std::string strProperty) {
     m_bsclClient->addObject(objAdd, strProperty, this->id());
   }

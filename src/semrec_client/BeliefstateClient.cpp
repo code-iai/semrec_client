@@ -283,6 +283,17 @@ namespace semrec_client {
     delete cdAnnotate;
   }
   
+  void BeliefstateClient::annotateResource(std::string strProperty, std::string strURI, std::string strNamespace, int nToID) {
+    designator_integration::Designator* cdAnnotate = new designator_integration::Designator(designator_integration::Designator::DesignatorType::OBJECT);
+    cdAnnotate->setValue("property", strProperty);
+    cdAnnotate->setValue("uri", strURI);
+    cdAnnotate->setValue("namespace", strNamespace);
+    
+    this->addDesignator(cdAnnotate, "resource-annotation", nToID);
+    
+    delete cdAnnotate;
+  }
+  
   void BeliefstateClient::exportFiles(std::string strFilename) {
     designator_integration::Designator* desigRequest = new designator_integration::Designator();
     desigRequest->setType(designator_integration::Designator::DesignatorType::ACTION);

@@ -115,6 +115,8 @@ namespace semrec_client {
     void annotateParameter(std::string strKey, std::string strValue, int nToID = -1);
     void annotateParameter(std::string strKey, float fValue, int nToID = -1);
     
+    void annotateResource(std::string strProperty, std::string strURI, std::string strNamespace = "", int nToID = -1);
+    
     void exportFiles(std::string strFilename);
     void registerOWLNamespace(std::string strShortcut, std::string strIRI);
     
